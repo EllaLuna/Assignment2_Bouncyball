@@ -22,17 +22,23 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-           if (transform.position.y < -4)
+        DestroyBall();
+    }
+
+    private void DestroyBall()
+    {
+        if (transform.position.y < -4)
         {
             Destroy(gameObject);
         }
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (!gameStarted)
         {
             rigidBody.velocity = new Vector2(initialSpeedX, initialSpeedY);
-            Physics2D.gravity = new Vector2(0,0);
+            Physics2D.gravity = Vector2.zero;
             gameStarted = true;
         }
 
