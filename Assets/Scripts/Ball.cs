@@ -16,7 +16,6 @@ public class Ball : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         rigidBody = GetComponent<Rigidbody2D>();
     }
 
@@ -33,7 +32,7 @@ public class Ball : MonoBehaviour
         if (!gameStarted)
         {
             rigidBody.velocity = new Vector2(initialSpeedX, initialSpeedY);
-            Physics2D.gravity = Vector2.zero;
+            Physics2D.gravity = new Vector2(0,0);
             gameStarted = true;
         }
 
