@@ -8,6 +8,7 @@ public class Ball : MonoBehaviour
     [SerializeField] private float randomNumber = 0f;
     [SerializeField] private float initialSpeedX = 0f;
     [SerializeField] private float initialSpeedY = 0f;
+    [SerializeField] private float bottomBorder = -4f;
 
     private Rigidbody2D rigidBody;
 
@@ -27,7 +28,7 @@ public class Ball : MonoBehaviour
 
     private void DestroyBall()
     {
-        if (transform.position.y < -4)
+        if (transform.position.y < bottomBorder)
         {
             Destroy(gameObject);
         }
