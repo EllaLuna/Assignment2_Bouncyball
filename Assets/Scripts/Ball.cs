@@ -31,6 +31,7 @@ public class Ball : MonoBehaviour
         if (transform.position.y < bottomBorder)
         {
             Destroy(gameObject);
+            Screens.gameOver = true;
         }
     }
 
